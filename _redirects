@@ -1,6 +1,0 @@
-/sitemap.xml /sitemap.xml 200
-/robots.txt /robots.txt 200
-/favicon.svg /favicon.svg 200
-/assets/* /assets/:splat 200
-/site-photos/* /site-photos/:splat 200
-/* /index.html 200
