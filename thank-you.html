@@ -11,6 +11,24 @@
       function gtag(){dataLayer.push(arguments);}
       gtag("js", new Date());
       gtag("config", "AW-16494550632");
+      (function(){
+        try {
+          if (window.sessionStorage.getItem("jm_exterior_cleaning_conversion_pending") === "1") {
+            window.sessionStorage.removeItem("jm_exterior_cleaning_conversion_pending");
+            window.dataLayer.push({
+              event: "exterior_cleaning_form_submit",
+              conversion_action: "Exterior cleaning form submit",
+              send_to: "AW-16494550632/JhN4CKjR5lUaEOi8m7k9"
+            });
+            gtag("event", "conversion", {
+              send_to: "AW-16494550632/JhN4CKjR5lUaEOi8m7k9",
+              event_timeout: 2000
+            });
+          }
+        } catch (error) {
+          // If browser storage is unavailable, do not fire on a direct thank-you page visit.
+        }
+      })();
     </script>
     <style>
       :root {
