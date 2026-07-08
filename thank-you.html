@@ -13,7 +13,11 @@
       gtag("config", "AW-16494550632");
       (function(){
         try {
-          if (window.sessionStorage.getItem("jm_exterior_cleaning_conversion_pending") === "1") {
+          var urlParams = new URLSearchParams(window.location.search);
+          var hasQuoteSuccess = urlParams.get("quote") === "sent";
+          var hasPendingConversion = window.sessionStorage.getItem("jm_exterior_cleaning_conversion_pending") === "1";
+
+          if (hasQuoteSuccess || hasPendingConversion) {
             window.sessionStorage.removeItem("jm_exterior_cleaning_conversion_pending");
             window.dataLayer.push({
               event: "exterior_cleaning_form_submit",
