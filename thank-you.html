@@ -23,6 +23,13 @@
           var urlParams = new URLSearchParams(window.location.search);
           var hasQuoteSuccess = urlParams.get("quote") === "sent";
           var hasPendingConversion = window.sessionStorage.getItem("jm_exterior_cleaning_conversion_pending") === "1";
+          var conversionAlreadySent = window.sessionStorage.getItem("jm_exterior_cleaning_conversion_sent") === "1";
+
+          if (conversionAlreadySent) {
+            window.sessionStorage.removeItem("jm_exterior_cleaning_conversion_sent");
+            window.sessionStorage.removeItem("jm_exterior_cleaning_conversion_pending");
+            return;
+          }
 
           if (hasQuoteSuccess || hasPendingConversion) {
             window.sessionStorage.removeItem("jm_exterior_cleaning_conversion_pending");
