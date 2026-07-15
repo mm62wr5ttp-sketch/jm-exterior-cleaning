@@ -33,6 +33,7 @@
 
           if (hasQuoteSuccess || hasPendingConversion) {
             window.sessionStorage.removeItem("jm_exterior_cleaning_conversion_pending");
+            window.sessionStorage.setItem("jm_exterior_cleaning_conversion_sent", "1");
             window.dataLayer.push({
               event: "exterior_cleaning_form_submit",
               conversion_action: "Exterior cleaning form submit",
