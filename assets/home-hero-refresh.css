@@ -1,4 +1,4 @@
-/* Homepage hero: keep the supplied 4:3 photograph sharp and fully framed. */
+/* Homepage hero: match the supplied van photograph so nothing is cropped. */
 main > section:first-child {
   min-height: 0 !important;
   display: block;
@@ -10,8 +10,8 @@ main > section:first-child > div:nth-child(1) {
   position: relative !important;
   inset: auto !important;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background-image: url("../site-photos/hero-roof.jpg?v=20260915") !important;
+  aspect-ratio: 39 / 35;
+  background-image: url("../site-photos/hero-roof.jpg?v=20260915-van") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -47,8 +47,8 @@ main > section:first-child > div:nth-child(4) > div:first-child {
     right: 2rem !important;
     bottom: auto !important;
     left: auto !important;
-    width: min(52vw, 760px);
-    aspect-ratio: 4 / 3;
+    width: min(48vw, 670px);
+    aspect-ratio: 39 / 35;
     border: 1px solid rgba(255, 255, 255, 0.18);
     border-radius: 1.25rem;
     box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
