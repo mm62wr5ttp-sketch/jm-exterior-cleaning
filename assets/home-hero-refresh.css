@@ -11,7 +11,7 @@ main > section:first-child > div:nth-child(1) {
   inset: auto !important;
   width: 100%;
   aspect-ratio: 4 / 3;
-  background-image: url("../site-photos/hero-roof-work-van.jpeg") !important;
+  background-image: url("../site-photos/hero-roof.jpg?v=20260915") !important;
   background-size: cover !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
