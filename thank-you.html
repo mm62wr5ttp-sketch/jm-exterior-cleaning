@@ -50,6 +50,43 @@
         }
       })();
     </script>
+    <script>
+      (function () {
+        var phoneClickConversion = "AW-16494550632/vp4WCLL3lrAdEOi8m7k9";
+        var whatsappClickConversion = "AW-16494550632/Pa2_CMCMmbAdEOi8m7k9";
+
+        function sendContactClickConversion(sendTo) {
+          window.dataLayer = window.dataLayer || [];
+          gtag("event", "conversion", {
+            send_to: sendTo,
+            value: 1.0,
+            currency: "GBP",
+            event_timeout: 2000
+          });
+        }
+
+        document.addEventListener("click", function (event) {
+          var link = event.target.closest("a[href]");
+          if (!link) return;
+
+          var href = link.getAttribute("href") || "";
+          if (href.toLowerCase().indexOf("tel:") === 0) {
+            sendContactClickConversion(phoneClickConversion);
+            return;
+          }
+
+          try {
+            var destination = new URL(link.href, window.location.href);
+            var hostname = destination.hostname.toLowerCase();
+            if (hostname === "wa.me" || hostname === "www.wa.me" || hostname.endsWith(".whatsapp.com")) {
+              sendContactClickConversion(whatsappClickConversion);
+            }
+          } catch (error) {
+            // Ignore malformed links and allow normal navigation.
+          }
+        }, true);
+      })();
+    </script>
     <style>
       :root {
         color-scheme: dark;
